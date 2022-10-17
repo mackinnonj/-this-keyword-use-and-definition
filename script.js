@@ -45,3 +45,12 @@ var c = {
     name: 'jay',
     say() {return function() {console.log(this)}}
 }
+
+//However, by using an arrow function it will be bound to object "c" and return name: 'jay' because the arrow function lexically binds "this" 
+//example
+var c = {
+    name: 'jay',
+    say() {return () => {console.log(this)}}
+}
+
+
