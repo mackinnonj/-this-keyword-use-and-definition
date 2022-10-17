@@ -37,3 +37,11 @@ const a = function() {
 a()
 
 // Window calls a() and Window also calls b(). Yes, the b function is in the a function, but the window called "b". There is nothing to the left of b() where when we call "c.hi()" the "this" object is the property "hi" of the function "c"
+
+//Note: using this in a function that's in a method gets bound to the Window
+//example:
+
+var c = {
+    name: 'jay',
+    say() {return function() {console.log(this)}}
+}
